@@ -1,1 +1,1 @@
-# Prolog programming language``
+# Prolog programming language
