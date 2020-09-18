@@ -53,3 +53,31 @@ female(diana).
  *
  * if replied with semicolon, it will continue printing out combinations.
  */
+
+% albert has the following children
+parent(albert, bob).
+parent(albert, betsy).
+parent(albert, bill).
+
+% alice has the following children
+parent(alice, bob).
+parent(alice, betsy).
+parent(alice, bill).
+
+% bob has the following children
+parent(bob, carl).
+parent(bob, charlie).
+
+% Y is the child of X whose parent is albert
+get_grandchild :-
+    parent(albert, X),
+    parent(X, Y),
+    write('Albert\'s grandchild is '), write(Y), nl.
+
+% specifications of format are dicussed here:
+% https://www.swi-prolog.org/pldoc/man?section=format
+get_grandparent :-
+    parent(X, carl),
+    parent(X, charlie),
+    parent(Y, X),
+    format('~s is the grandparent~n', [Y]).
