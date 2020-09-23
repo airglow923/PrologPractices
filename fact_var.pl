@@ -81,3 +81,31 @@ get_grandparent :-
     parent(X, charlie),
     parent(Y, X),
     format('~s is the grandparent~n', [Y]).
+
+% X is the greandparent of Y
+grandparent(X, Y) :-
+    parent(Z, Y),
+    parent(X, Z).
+
+% X is moral if X is human
+moral(X) :- human(X).
+
+% as hyundeok is set human, hyundeok is moral as well
+% meaning that moral(hyundeok) yields true
+human(hyundeok).
+
+% underline (_) is called an anonymouse variable
+% it is used to check the existence of a predicate
+
+case(0) :-
+    write('Case 0').
+
+case(1) :-
+    write('Case 1').
+
+case(2) :-
+    write('Case 2').
+
+% by using _, we can represent a default case
+case(_) :-
+    write('default').
